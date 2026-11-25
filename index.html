@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Perch</title>
+  <meta name="description" content="London cafés where you can open your laptop, for the day and hour you pick.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ECEDEF">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Perch">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="map" class="map" role="region" aria-label="Map of cafés"></div>
+
+  <main class="slip" id="slip">
+    <div class="tear tear--top" aria-hidden="true"></div>
+    <div class="paper">
+      <header class="head">
+        <div class="head__top">
+          <p class="brand">Perch <span>London</span></p>
+          <button type="button" class="now" id="now" hidden>Back to now</button>
+        </div>
+        <h1 class="when" id="when" aria-live="polite"></h1>
+        <div class="days" id="days" role="group" aria-label="Day"></div>
+        <div class="ruler" id="ruler" role="slider" tabindex="0" aria-label="Time"
+             aria-valuemin="360" aria-valuemax="1380">
+          <div class="ruler__ticks" id="ticks" aria-hidden="true"></div>
+          <div class="ruler__needle" id="needle" aria-hidden="true"><span></span></div>
+        </div>
+      </header>
+
+      <ul class="lines" id="lines"></ul>
+      <div id="total"></div>
+      <section class="void" id="void" hidden>
+        <h2 class="void__title" id="voidTitle"></h2>
+        <ul class="lines lines--void" id="voidLines"></ul>
+      </section>
+
+      <footer class="foot" id="foot"></footer>
+    </div>
+    <div class="tear tear--bottom" aria-hidden="true"></div>
+  </main>
+
+  <noscript><p class="noscript">Perch needs JavaScript to print your list.</p></noscript>
+
+  <script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js"></script>
+  <script src="cafes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
